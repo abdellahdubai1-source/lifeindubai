@@ -1,18 +1,21 @@
 /* ==========================================================================
    Life in Dubai KAL — Stylesheet
-   Premium, elegant, uncluttered luxury tourism design.
+   Premium, elegant, uncluttered travel & tourism agency design.
+   Brand palette: primary red / deep navy / soft red / white / light grey.
    ========================================================================== */
 
 /* ---------- CSS Variables ---------- */
 :root {
   /* Brand colors */
-  --color-navy: #07111f;
-  --color-navy-soft: #0d1c2f;
-  --color-gold: #c9a45c;
-  --color-gold-light: #e0c48c;
-  --color-ivory: #f8f5ee;
+  --color-red: #cf3f40;        /* primary red — buttons, labels, links, icon accents */
+  --color-red-dark: #b23334;   /* hover/active state for red elements */
+  --color-red-soft: #f3b7b9;   /* soft red — subtle backgrounds, badges, highlights */
+  --color-navy: #102b49;       /* deep navy — headings, navbar, dark sections, footer */
   --color-white: #ffffff;
-  --color-grey: #a6adb7;
+  --color-bg-light: #f7f7f7;   /* light section backgrounds */
+  --color-text: #171c24;       /* dark text */
+  --color-text-muted: rgba(23, 28, 36, 0.72);   /* secondary body copy on light bg */
+  --color-on-dark-muted: rgba(255, 255, 255, 0.68); /* secondary copy on navy/dark bg */
 
   /* Typography */
   --font-heading: "Cormorant Garamond", serif;
@@ -55,7 +58,7 @@ html {
 body {
   font-family: var(--font-body);
   font-weight: 400;
-  color: var(--color-navy);
+  color: var(--color-text);
   background-color: var(--color-white);
   line-height: 1.6;
   overflow-x: hidden;
@@ -97,7 +100,7 @@ h4 {
 /* Visible focus styles for accessibility */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-red);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -114,7 +117,7 @@ button:focus-visible {
   top: -100px;
   left: var(--space-sm);
   background: var(--color-navy);
-  color: var(--color-ivory);
+  color: var(--color-white);
   padding: var(--space-xs) var(--space-md);
   border-radius: var(--radius-sm);
   z-index: 1000;
@@ -132,12 +135,12 @@ button:focus-visible {
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-red);
   margin-bottom: var(--space-sm);
 }
 
 .eyebrow-light {
-  color: var(--color-gold-light);
+  color: var(--color-red-soft);
 }
 
 .section-title {
@@ -148,7 +151,7 @@ button:focus-visible {
 
 .section-text {
   font-size: 1.05rem;
-  color: #2c3542;
+  color: var(--color-text-muted);
   max-width: 620px;
 }
 
@@ -178,16 +181,16 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-.btn-gold {
-  background-color: var(--color-gold);
-  color: var(--color-navy);
-  border: 1px solid var(--color-gold);
+.btn-primary {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border: 1px solid var(--color-red);
 }
 
-.btn-gold:hover,
-.btn-gold:focus-visible {
-  background-color: var(--color-gold-light);
-  border-color: var(--color-gold-light);
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--color-red-dark);
+  border-color: var(--color-red-dark);
   transform: translateY(-2px);
 }
 
@@ -199,8 +202,9 @@ button:focus-visible {
 
 .btn-outline:hover,
 .btn-outline:focus-visible {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: var(--color-white);
+  background-color: rgba(207, 63, 64, 0.16);
+  border-color: var(--color-red-soft);
+  color: var(--color-white);
   transform: translateY(-2px);
 }
 
@@ -223,8 +227,8 @@ button:focus-visible {
 }
 
 .site-header.scrolled {
-  background-color: rgba(7, 17, 31, 0.96);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  background-color: rgba(16, 43, 73, 0.96);
+  box-shadow: 0 4px 24px rgba(16, 43, 73, 0.25);
   backdrop-filter: blur(6px);
 }
 
@@ -251,7 +255,7 @@ button:focus-visible {
 }
 
 .nav-logo span {
-  color: var(--color-gold);
+  color: var(--color-red);
 }
 
 .nav-menu {
@@ -275,7 +279,7 @@ button:focus-visible {
   bottom: -2px;
   width: 0;
   height: 1px;
-  background-color: var(--color-gold);
+  background-color: var(--color-red);
   transition: width var(--transition-fast);
 }
 
@@ -339,9 +343,9 @@ button:focus-visible {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(7, 17, 31, 0.65) 0%,
-    rgba(7, 17, 31, 0.45) 40%,
-    rgba(7, 17, 31, 0.8) 100%
+    rgba(16, 43, 73, 0.65) 0%,
+    rgba(16, 43, 73, 0.45) 40%,
+    rgba(16, 43, 73, 0.82) 100%
   );
 }
 
@@ -362,7 +366,7 @@ button:focus-visible {
 
 .hero-text {
   font-size: clamp(1rem, 1.6vw, 1.15rem);
-  color: var(--color-ivory);
+  color: rgba(255, 255, 255, 0.88);
   max-width: 560px;
   margin-inline: auto;
   margin-bottom: var(--space-lg);
@@ -396,7 +400,7 @@ button:focus-visible {
   width: 4px;
   height: 8px;
   border-radius: 2px;
-  background-color: var(--color-gold);
+  background-color: var(--color-red-soft);
   animation: scrollDot 1.8s ease-in-out infinite;
 }
 
@@ -424,11 +428,11 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   EXPERIENCES
+   EXPERIENCES / SERVICES
    ========================================================================== */
 .experiences {
   padding-block: var(--space-2xl) var(--space-3xl);
-  background-color: var(--color-ivory);
+  background-color: var(--color-bg-light);
 }
 
 .experience-grid {
@@ -438,9 +442,9 @@ button:focus-visible {
 }
 
 .experience-card {
-  grid-column: span 3;
+  grid-column: span 2;
   background-color: var(--color-white);
-  border: 1px solid rgba(7, 17, 31, 0.08);
+  border: 1px solid rgba(16, 43, 73, 0.08);
   border-radius: var(--radius-md);
   overflow: hidden;
   transition: transform var(--transition-med), box-shadow var(--transition-med);
@@ -453,16 +457,12 @@ button:focus-visible {
 .experience-card:hover,
 .experience-card:focus-within {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(7, 17, 31, 0.1);
+  box-shadow: 0 18px 40px rgba(16, 43, 73, 0.12);
 }
 
 .experience-media {
   aspect-ratio: 4 / 3;
   overflow: hidden;
-}
-
-.experience-card.featured .experience-media {
-  aspect-ratio: 16 / 10;
 }
 
 .experience-media img {
@@ -486,7 +486,7 @@ button:focus-visible {
 }
 
 .experience-body p {
-  color: #3c4552;
+  color: var(--color-text-muted);
   font-size: 0.96rem;
   margin-bottom: var(--space-md);
 }
@@ -504,19 +504,53 @@ button:focus-visible {
 }
 
 .enquire-link .arrow {
-  color: var(--color-gold);
+  color: var(--color-red);
   transition: transform var(--transition-fast);
 }
 
 .enquire-link:hover,
 .enquire-link:focus-visible {
-  color: var(--color-gold);
-  border-color: var(--color-gold);
+  color: var(--color-red);
+  border-color: var(--color-red);
 }
 
 .enquire-link:hover .arrow,
 .enquire-link:focus-visible .arrow {
   transform: translateX(5px);
+}
+
+/* ---------- Icon-based featured cards (Flight Ticket Booking / Visa Assistance) ---------- */
+.experience-card.icon-card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.experience-icon-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin: var(--space-lg) auto 0;
+  border-radius: 50%;
+  background-color: var(--color-red-soft);
+  color: var(--color-red);
+  flex-shrink: 0;
+}
+
+.experience-icon-shell svg {
+  width: 30px;
+  height: 30px;
+}
+
+.icon-card .experience-body {
+  padding-top: var(--space-md);
+}
+
+.icon-card .experience-body p {
+  margin-inline: auto;
+  max-width: 34ch;
 }
 
 /* ==========================================================================
@@ -569,7 +603,7 @@ button:focus-visible {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--color-gold);
+  background-color: var(--color-red);
 }
 
 /* ==========================================================================
@@ -577,7 +611,7 @@ button:focus-visible {
    ========================================================================== */
 .why-us {
   padding-block: var(--space-2xl) var(--space-3xl);
-  background-color: var(--color-ivory);
+  background-color: var(--color-bg-light);
 }
 
 .why-grid {
@@ -597,9 +631,9 @@ button:focus-visible {
   justify-content: center;
   width: 56px;
   height: 56px;
-  border: 1px solid var(--color-gold);
+  border: 1px solid var(--color-red);
   border-radius: 50%;
-  color: var(--color-gold);
+  color: var(--color-red);
   margin-bottom: var(--space-md);
 }
 
@@ -615,7 +649,7 @@ button:focus-visible {
 
 .why-card p {
   font-size: 0.92rem;
-  color: #3c4552;
+  color: var(--color-text-muted);
 }
 
 /* ==========================================================================
@@ -639,7 +673,7 @@ button:focus-visible {
 .cta-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 17, 31, 0.88) 0%, rgba(7, 17, 31, 0.7) 50%, rgba(7, 17, 31, 0.92) 100%);
+  background: linear-gradient(180deg, rgba(16, 43, 73, 0.88) 0%, rgba(16, 43, 73, 0.72) 50%, rgba(16, 43, 73, 0.92) 100%);
 }
 
 .cta-content {
@@ -656,7 +690,7 @@ button:focus-visible {
 }
 
 .cta-text {
-  color: var(--color-ivory);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 1.05rem;
   max-width: 520px;
   margin-inline: auto;
@@ -676,7 +710,7 @@ button:focus-visible {
    ========================================================================== */
 .site-footer {
   background-color: var(--color-navy);
-  color: var(--color-grey);
+  color: var(--color-on-dark-muted);
   padding-top: var(--space-2xl);
 }
 
@@ -693,11 +727,20 @@ button:focus-visible {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-white);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.3rem;
 }
 
 .footer-logo span {
-  color: var(--color-gold);
+  color: var(--color-red);
+}
+
+.footer-tagline {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-red-soft);
+  margin-bottom: var(--space-sm);
 }
 
 .footer-address {
@@ -712,7 +755,7 @@ button:focus-visible {
 
 .footer-block a:hover,
 .footer-block a:focus-visible {
-  color: var(--color-gold);
+  color: var(--color-red-soft);
 }
 
 .footer-links h3 {
@@ -739,7 +782,7 @@ button:focus-visible {
   text-align: center;
   padding-block: var(--space-md);
   font-size: 0.82rem;
-  color: var(--color-grey);
+  color: var(--color-on-dark-muted);
 }
 
 /* ==========================================================================
@@ -758,7 +801,7 @@ button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(7, 17, 31, 0.3);
+  box-shadow: 0 8px 24px rgba(16, 43, 73, 0.32);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
@@ -770,7 +813,7 @@ button:focus-visible {
 .whatsapp-float:hover,
 .whatsapp-float:focus-visible {
   transform: scale(1.08);
-  box-shadow: 0 10px 28px rgba(7, 17, 31, 0.4);
+  box-shadow: 0 10px 28px rgba(16, 43, 73, 0.42);
 }
 
 /* ==========================================================================
