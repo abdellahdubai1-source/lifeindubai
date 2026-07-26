@@ -568,12 +568,14 @@ button:focus-visible {
   align-items: center;
 }
 
-.about-media img {
+.about-media img,
+.about-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: var(--radius-md);
   aspect-ratio: 5 / 6;
+  display: block;
 }
 
 .about-content .section-text {
