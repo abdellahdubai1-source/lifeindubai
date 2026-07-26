@@ -411,20 +411,82 @@ button:focus-visible {
 }
 
 /* ==========================================================================
-   INTRODUCTION
+   INTRODUCTION — SCROLLING WELCOME STRIP
    ========================================================================== */
-.intro {
-  padding-block: var(--space-3xl) var(--space-2xl);
+.welcome-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 34px 0;
   background-color: var(--color-white);
 }
 
-.intro-inner {
-  max-width: 700px;
-  text-align: center;
+.welcome-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: welcome-scroll 22s linear infinite;
 }
 
-.intro-inner .section-text {
-  margin-inline: auto;
+.welcome-marquee-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 28px;
+  padding-right: 28px;
+  white-space: nowrap;
+}
+
+.welcome-label,
+.welcome-message {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.welcome-label {
+  color: var(--color-red);
+}
+
+.welcome-message {
+  color: var(--color-navy);
+}
+
+.welcome-separator {
+  color: var(--color-red);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+@keyframes welcome-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.welcome-marquee:hover .welcome-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (max-width: 767px) {
+  .welcome-marquee {
+    padding: 26px 0;
+  }
+
+  .welcome-marquee-group {
+    gap: 20px;
+    padding-right: 20px;
+  }
+
+  .welcome-label,
+  .welcome-message {
+    font-size: 1.35rem;
+  }
 }
 
 /* ==========================================================================
@@ -877,6 +939,11 @@ button:focus-visible {
 
   .scroll-indicator span {
     animation: none;
+  }
+
+  .welcome-marquee-track {
+    animation: none;
+    transform: none;
   }
 }
 
